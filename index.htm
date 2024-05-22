@@ -1,5 +1,5 @@
 
-  <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
@@ -57,8 +57,9 @@
         }
         .carousel {
             position: relative;
-            max-width: 100%;
-            margin: auto;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
             overflow: hidden;
         }
         .carousel img {
@@ -68,21 +69,20 @@
         .carousel img.active {
             display: block;
         }
-        .prev, .next {
+        .carousel-buttons {
             position: absolute;
             top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
             transform: translateY(-50%);
-            font-size: 18px;
-            color: #fff;
+        }
+        .carousel-buttons button {
             background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
             padding: 10px;
             cursor: pointer;
-        }
-        .prev {
-            left: 10px;
-        }
-        .next {
-            right: 10px;
         }
     </style>
 </head>
@@ -101,7 +101,15 @@
         <section>
             <h2>歡迎來到我的個人網站</h2>
             <p>我是[你的名字]，一位專業的網站設計師。我擁有豐富的設計經驗和創意，致力於為客戶提供最佳的設計方案。</p>
-            <img src="你的照片鏈接" alt="我的照片">
+            <div class="carousel">
+                <img src="你的圖片鏈接1" alt="圖片1" class="active">
+                <img src="你的圖片鏈接2" alt="圖片2">
+                <img src="你的圖片鏈接3" alt="圖片3">
+                <div class="carousel-buttons">
+                    <button onclick="previousSlide()">&#10094;</button>
+                    <button onclick="nextSlide()">&#10095;</button>
+                </div>
+            </div>
         </section>
     </div>
     <div id="about" class="container">
@@ -113,12 +121,14 @@
     <div id="portfolio" class="container">
         <section>
             <h2>作品集</h2>
-            <div class="carousel">
-                <img src="作品1的圖片鏈接" alt="作品1" class="active">
+            <p>以下是我最近完成的一些設計作品：</p>
+            <div>
+                <img src="作品1的圖片鏈接" alt="作品1">
+                <p>作品1描述</p>
+            </div>
+            <div>
                 <img src="作品2的圖片鏈接" alt="作品2">
-                <img src="作品3的圖片鏈接" alt="作品3">
-                <div class="prev" onclick="changeSlide(-1)">&#10094;</div>
-                <div class="next" onclick="changeSlide(1)">&#10095;</div>
+                <p>作品2描述</p>
             </div>
         </section>
     </div>
@@ -153,4 +163,23 @@
         <p>版權所有 &copy; 2024 [你的名字]</p>
     </footer>
     <script>
-        let currentSlide = 
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel img');
+        
+        function showSlide(index) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (index + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+        
+        function previousSlide() {
+            showSlide(currentSlide - 1);
+        }
+    </script>
+</body>
+</html>
+ 
