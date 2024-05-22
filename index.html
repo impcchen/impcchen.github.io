@@ -239,6 +239,22 @@
         <p>版權所有 &copy; 2024 [你的名字]</p>
     </footer>
     <script>
+        function showLanguage(lang) {
+    if (lang === 'zh') {
+        document.querySelectorAll('nav a')[0].textContent = '首頁';
+        document.querySelectorAll('nav a')[1].textContent = '關於我';
+        document.querySelectorAll('nav a')[2].textContent = '作品集';
+        document.querySelectorAll('nav a')[3].textContent = '服務';
+        document.querySelectorAll('nav a')[4].textContent = '聯繫我';
+    } else {
+        document.querySelectorAll('nav a')[0].textContent = 'Home';
+        document.querySelectorAll('nav a')[1].textContent = 'About';
+        document.querySelectorAll('nav a')[2].textContent = 'Portfolio';
+        document.querySelectorAll('nav a')[3].textContent = 'Services';
+        document.querySelectorAll('nav a')[4].textContent = 'Contact';
+    }
+}
+
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel img');
         const languages = document.querySelectorAll('.language-tabs button');
