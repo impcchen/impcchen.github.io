@@ -96,6 +96,21 @@
             color: #fff;
             padding: 10px;
         }
+        .language-tabs {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .language-tabs button {
+            background-color: #444;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .language-tabs button.active {
+            background-color: #666;
+        }
     </style>
 </head>
 <body>
@@ -113,6 +128,10 @@
             </div>
         </div>
     </header>
+    <div class="language-tabs">
+        <button onclick="showLanguage('zh')" class="active">中文</button>
+        <button onclick="showLanguage('en')">English</button>
+    </div>
     <nav>
         <a href="#home">首頁</a>
         <a href="#about">關於我</a>
@@ -121,19 +140,27 @@
         <a href="#contact">聯繫我</a>
     </nav>
     <div id="home" class="container">
-        <section>
+        <section class="zh">
             <h2>歡迎來到我的個人網站</h2>
             <p>我是[你的名字]，一位專業的網站設計師。我擁有豐富的設計經驗和創意，致力於為客戶提供最佳的設計方案。</p>
         </section>
+        <section class="en" style="display: none;">
+            <h2>Welcome to My Personal Website</h2>
+            <p>I am [Your Name], a professional web designer. I have rich design experience and creativity, and I am committed to providing the best design solutions for my clients.</p>
+        </section>
     </div>
     <div id="about" class="container">
-        <section>
+        <section class="zh">
             <h2>關於我</h2>
             <p>我畢業於[學校名稱]，主修[專業]。我熱愛設計，擁有[多少年]的設計經驗，精通HTML、CSS、JavaScript等前端技術。</p>
         </section>
+        <section class="en" style="display: none;">
+            <h2>About Me</h2>
+            <p>I graduated from [School Name], majoring in [Major]. I love design and have [number of years] of design experience, proficient in HTML, CSS, JavaScript, and other front-end technologies.</p>
+        </section>
     </div>
     <div id="portfolio" class="container">
-        <section>
+        <section class="zh">
             <h2>作品集</h2>
             <p>以下是我最近完成的一些設計作品：</p>
             <div>
@@ -145,9 +172,21 @@
                 <p>作品2描述</p>
             </div>
         </section>
+        <section class="en" style="display: none;">
+            <h2>Portfolio</h2>
+            <p>Here are some of my recent design works:</p>
+            <div>
+                <img src="portfolio-image1-link" alt="Project 1">
+                <p>Description of Project 1</p>
+            </div>
+            <div>
+                <img src="portfolio-image2-link" alt="Project 2">
+                <p>Description of Project 2</p>
+            </div>
+        </section>
     </div>
     <div id="services" class="container">
-        <section>
+        <section class="zh">
             <h2>服務</h2>
             <p>我提供以下服務：</p>
             <ul>
@@ -157,9 +196,19 @@
                 <li>品牌設計</li>
             </ul>
         </section>
+        <section class="en" style="display: none;">
+            <h2>Services</h2>
+            <p>I provide the following services:</p>
+            <ul>
+                <li>Website Design</li>
+                <li>Responsive Design</li>
+                <li>User Experience Design</li>
+                <li>Brand Design</li>
+            </ul>
+        </section>
     </div>
     <div id="contact" class="container">
-        <section>
+        <section class="zh">
             <h2>聯繫我</h2>
             <p>如果你有任何問題或需要進一步了解我的服務，請通過以下方式聯繫我：</p>
             <form action="你的表單處理URL" method="post">
@@ -172,6 +221,19 @@
                 <input type="submit" value="發送">
             </form>
         </section>
+        <section class="en" style="display: none;">
+            <h2>Contact Me</h2>
+            <p>If you have any questions or need further information about my services, please contact me through the following ways:</p>
+            <form action="your-form-processing-url" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br>
+                <input type="submit" value="Send">
+            </form>
+        </section>
     </div>
     <footer>
         <p>版權所有 &copy; 2024 [你的名字]</p>
@@ -179,6 +241,9 @@
     <script>
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel img');
+        const languages = document.querySelectorAll('.language-tabs button');
+        const zhSections = document.querySelectorAll('.zh');
+        const enSections = document.querySelectorAll('.en');
         
         function showSlide(index) {
             slides[currentSlide].classList.remove('active');
@@ -194,7 +259,21 @@
             showSlide(currentSlide - 1);
         }
         
-        setInterval(nextSlide, 3000); // 每3秒自動切換圖片
+        function showLanguage(lang) {
+            if (lang === 'zh') {
+                zhSections.forEach(section => section.style.display = 'block');
+                enSections.forEach(section => section.style.display = 'none');
+                languages[0].classList.add('active');
+                languages[1].classList.remove('active');
+            } else {
+                zhSections.forEach(section => section.style.display = 'none');
+                enSections.forEach(section => section.style.display = 'block');
+                languages[0].classList.remove('active');
+                languages[1].classList.add('active');
+            }
+        }
+        
+        setInterval(nextSlide, 3000); // 自動切換圖片每3秒
     </script>
 </body>
 </html>
