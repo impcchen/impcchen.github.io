@@ -1,121 +1,156 @@
 
-    <title>自我介紹網站</title>
+  <!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人網站</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            box-sizing: border-box;
+            line-height: 1.6;
         }
         header {
-            background-color: #333;
+            background: #333;
             color: #fff;
+            padding: 10px 0;
             text-align: center;
-            padding: 20px;
         }
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #444;
         }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
+        nav a {
+            color: #fff;
+            padding: 15px;
+            text-decoration: none;
+            text-transform: uppercase;
         }
-        main {
-            padding: 20px;
+        nav a:hover {
+            background: #555;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
         }
         section {
-            margin-bottom: 30px;
+            padding: 20px 0;
         }
-        h1, h2 {
-            color: #333;
+        #about, #portfolio, #services, #contact {
+            background: #f4f4f4;
+            padding: 20px;
+            margin: 20px 0;
         }
         footer {
-            background-color: #333;
+            background: #333;
             color: #fff;
             text-align: center;
-            padding: 10px;
+            padding: 10px 0;
             position: fixed;
-            bottom: 0;
             width: 100%;
+            bottom: 0;
+        }
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .carousel img {
+            width: 100%;
+            display: none;
+        }
+        .carousel img.active {
+            display: block;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>歡迎來到我的自我介紹網站</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">關於我</a></li>
-                <li><a href="#portfolio">作品集</a></li>
-                <li><a href="#resume">經歷</a></li>
-                <li><a href="#blog">作品</a></li>
-                <li><a href="#contact">聯繫我</a></li>
-            </ul>
-        </nav>
+        <h1>網站設計師的個人網站</h1>
     </header>
-    <main>
-        <section id="about">
+    <nav>
+        <a href="#home">首頁</a>
+        <a href="#about">關於我</a>
+        <a href="#portfolio">作品集</a>
+        <a href="#services">服務</a>
+        <a href="#contact">聯繫我</a>
+    </nav>
+    <div id="home" class="container">
+        <section>
+            <h2>歡迎來到我的個人網站</h2>
+            <p>我是[你的名字]，一位專業的網站設計師。我擁有豐富的設計經驗和創意，致力於為客戶提供最佳的設計方案。</p>
+            <img src="你的照片鏈接" alt="我的照片">
+        </section>
+    </div>
+    <div id="about" class="container">
+        <section>
             <h2>關於我</h2>
-            <p>我是一個熱愛寫作的人......</p>
-            <p>我喜歡學習新事物......</p>
+            <p>我畢業於[學校名稱]，主修[專業]。我熱愛設計，擁有[多少年]的設計經驗，精通HTML、CSS、JavaScript等前端技術。</p>
         </section>
-        <section id="portfolio">
+    </div>
+    <div id="portfolio" class="container">
+        <section>
             <h2>作品集</h2>
-            <p>以下是我最近完成的一些作品：</p>
+            <div class="carousel">
+                <img src="作品1的圖片鏈接" alt="作品1" class="active">
+                <img src="作品2的圖片鏈接" alt="作品2">
+                <img src="作品3的圖片鏈接" alt="作品3">
+                <div class="prev" onclick="changeSlide(-1)">&#10094;</div>
+                <div class="next" onclick="changeSlide(1)">&#10095;</div>
+            </div>
+        </section>
+    </div>
+    <div id="services" class="container">
+        <section>
+            <h2>服務</h2>
+            <p>我提供以下服務：</p>
             <ul>
-                <li><a href="#">作品一</a></li>
-                <li><a href="#">作品二</a></li>
-                <li><a href="#">作品三</a></li>
+                <li>網站設計</li>
+                <li>響應式設計</li>
+                <li>用戶體驗設計</li>
+                <li>品牌設計</li>
             </ul>
         </section>
-        <section id="resume">
-            <h2>經歷</h2>
-            <p>我目前的履歷包括：</p>
-            <ul>
-                <li>某某大學</li>
-            
-            </ul>
-        </section>
-        <section id="blog">
-            <h2>文學創作</h2>
-            <p>我喜歡寫一些文章，你可以點擊以下連結查看：</p>
-            <ul>
-                <li><a href="#">文章1</a></li>
-                <li><a href="#">文章2</a></li>
-                <li><a href="#">文章3</a></li>
-            </ul>
-        </section>
-        <section id="contact">
+    </div>
+    <div id="contact" class="container">
+        <section>
             <h2>聯繫我</h2>
-            <p>如果你對我的作品或者想法感興趣，歡迎與我聯繫：</p>
-            <p>Email: example@example.com</p>
-            <p>電話：123-456-7890</p>
-            <p>社交媒體：
-                <a href="#">Facebook</a> |
-                <a href="#">Instgram</a> |
-                <a href="#">GitHub</a>
-
-
-
-
-
-
-
-
-
-
-
-
-                
-            </p>
+            <p>如果你有任何問題或需要進一步了解我的服務，請通過以下方式聯繫我：</p>
+            <form action="你的表單處理URL" method="post">
+                <label for="name">姓名：</label>
+                <input type="text" id="name" name="name" required><br><br>
+                <label for="email">電子郵件：</label>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="message">訊息：</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br>
+                <input type="submit" value="發送">
+            </form>
         </section>
-    </main>
+    </div>
     <footer>
-        <p>&copy; 2024 我的自我介紹網站</p>
+        <p>版權所有 &copy; 2024 [你的名字]</p>
     </footer>
-</body>
-</html>
-
+    <script>
+        let currentSlide = 
