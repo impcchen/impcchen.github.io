@@ -135,24 +135,24 @@
     <nav>
         <a href="#home">首頁</a>
         <a href="#about">關於我</a>
-        <a href="#portfolio">作品集</a>
-        <a href="#services">服務</a>
+        <a href="#portfolio">經歷</a>
+        <a href="#services">作品集</a>
         <a href="#contact">聯繫我</a>
     </nav>
     <div id="home" class="container">
         <section class="zh">
             <h2>歡迎來到我的個人網站</h2>
-            <p>我是[你的名字]，一位專業的網站設計師。我擁有豐富的設計經驗和創意，致力於為客戶提供最佳的設計方案。</p>
+            <p>我是黃品臻，我喜歡......。</p>
         </section>
         <section class="en" style="display: none;">
             <h2>Welcome to My Personal Website</h2>
-            <p>I am [Your Name], a professional web designer. I have rich design experience and creativity, and I am committed to providing the best design solutions for my clients.</p>
+            <p>I am pinchen Huang, I like......</p>
         </section>
     </div>
     <div id="about" class="container">
         <section class="zh">
             <h2>關於我</h2>
-            <p>我畢業於[學校名稱]，主修[專業]。我熱愛設計，擁有[多少年]的設計經驗，精通HTML、CSS、JavaScript等前端技術。</p>
+            <p>我就讀於國立聯合大學，主修華語文學系。</p>
         </section>
         <section class="en" style="display: none;">
             <h2>About Me</h2>
@@ -161,15 +161,15 @@
     </div>
     <div id="portfolio" class="container">
         <section class="zh">
-            <h2>作品集</h2>
-            <p>以下是我最近完成的一些設計作品：</p>
+            <h2>經歷</h2>
+            <p>以下是我的經歷：</p>
             <div>
                 <img src="作品1的圖片鏈接" alt="作品1">
-                <p>作品1描述</p>
+                <p>經歷1描述</p>
             </div>
             <div>
                 <img src="作品2的圖片鏈接" alt="作品2">
-                <p>作品2描述</p>
+                <p>經歷2描述</p>
             </div>
         </section>
         <section class="en" style="display: none;">
@@ -187,13 +187,13 @@
     </div>
     <div id="services" class="container">
         <section class="zh">
-            <h2>服務</h2>
-            <p>我提供以下服務：</p>
+            <h2>作品集</h2>
+            </p>以下是我的作品：</p>
             <ul>
-                <li>網站設計</li>
-                <li>響應式設計</li>
-                <li>用戶體驗設計</li>
-                <li>品牌設計</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
             </ul>
         </section>
         <section class="en" style="display: none;">
@@ -236,7 +236,7 @@
         </section>
     </div>
     <footer>
-        <p>版權所有 &copy; 2024 [你的名字]</p>
+        <p>版權所有 &copy; 2024 黃品臻</p>
     </footer>
     <script>
         let currentSlide = 0;
@@ -267,8 +267,8 @@
                 languages[1].classList.remove('active');
                 document.querySelectorAll('nav a')[0].textContent = '首頁';
                 document.querySelectorAll('nav a')[1].textContent = '關於我';
-                document.querySelectorAll('nav a')[2].textContent = '作品集';
-                document.querySelectorAll('nav a')[3].textContent = '服務';
+                document.querySelectorAll('nav a')[2].textContent = '經歷';
+                document.querySelectorAll('nav a')[3].textContent = '作品集';
                 document.querySelectorAll('nav a')[4].textContent = '聯繫我';
             } else {
                 zhSections.forEach(section => section.style.display = 'none');
