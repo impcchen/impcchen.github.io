@@ -78,12 +78,18 @@
             padding: 20px;
             margin: 20px 0;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        #about {
             display: flex;
+            justify-content: space-between;
             align-items: center;
         }
-        #about img, #portfolio img {
+        #about div {
+            flex: 1;
+        }
+        #about img {
             max-width: 200px;
-            margin-right: 20px;
+            margin-left: 20px;
         }
         footer {
             background: #333;
@@ -157,18 +163,18 @@
     </div>
     <div id="about" class="container">
         <section class="zh">
-            <img src="你的圖片鏈接" alt="我的照片">
             <div>
                 <h2>關於我</h2>
                 <p>我就讀於國立聯合大學，主修華語文學系。</p>
             </div>
+            <img src="你的圖片鏈接" alt="我的照片">
         </section>
         <section class="en" style="display: none;">
-            <img src="your-image-link" alt="My Photo">
             <div>
                 <h2>About Me</h2>
                 <p>I graduated from [School Name], majoring in [Major]. I love design and have [number of years] of design experience, proficient in HTML, CSS, JavaScript, and other front-end technologies.</p>
             </div>
+            <img src="your-image-link" alt="My Photo">
         </section>
     </div>
     <div id="portfolio" class="container">
