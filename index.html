@@ -82,14 +82,15 @@
         #about {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
         }
-        #about div {
+        #about .text-content {
             flex: 1;
+            padding-right: 20px;
         }
         #about img {
             max-width: 200px;
-            margin-left: 20px;
+            flex-shrink: 0;
         }
         footer {
             background: #333;
@@ -163,14 +164,14 @@
     </div>
     <div id="about" class="container">
         <section class="zh">
-            <div>
+            <div class="text-content">
                 <h2>關於我</h2>
                 <p>我就讀於國立聯合大學，主修華語文學系。</p>
             </div>
             <img src="你的圖片鏈接" alt="我的照片">
         </section>
         <section class="en" style="display: none;">
-            <div>
+            <div class="text-content">
                 <h2>About Me</h2>
                 <p>I graduated from [School Name], majoring in [Major]. I love design and have [number of years] of design experience, proficient in HTML, CSS, JavaScript, and other front-end technologies.</p>
             </div>
@@ -305,3 +306,4 @@
     </script>
 </body>
 </html>
+
